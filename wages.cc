@@ -1,8 +1,8 @@
 /*
  *        File: wages.cc
- *      Author: Nasseef Abukamail
+ *      Author: Morgan Van Valkenburgh
  *        Date: September 11, 2019
- * Description: Add Description
+ * Description: Wage calculator program, extra credit
  */
 
 #include <iostream>
@@ -23,8 +23,17 @@ int main(int argc, char const *argv[]) {
     cout << "Enter the number of hours: ";
     cin >> hours;
 
+    // Input Validation
+    if (rate < 8 || rate > 20){
+        return 0;
+    }
+
+    if (hours < 0 || hours > 60){
+        return 0;
+    }
+
     ///#3 Calculate wages (overtime?)
-    if (hours > 40)
+    if (hours > 40 )
     {
         double overtime = (hours - 40) * rate * 1.5;///overtime
         double regularPay = 40 * rate; ///regular
